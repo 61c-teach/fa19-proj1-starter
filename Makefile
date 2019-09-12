@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -lm
 
 Mandelbrot: ComplexNumber.o Mandelbrot.o MandelFrame.o
-	$(CC) -o MandelFrame ComplexNumber.o Mandelbrot.o MandelFrame.o
+	$(CC) -o MandelFrame ComplexNumber.o Mandelbrot.o MandelFrame.o -lm
 
 MandelMovie: ComplexNumber.o Mandelbrot.o MandelMovie.o
 	$(CC) -o $@ ComplexNumber.o Mandelbrot.o MandelMovie.o
