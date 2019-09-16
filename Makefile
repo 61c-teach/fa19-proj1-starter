@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -lm
+CFLAGS = -lm -g
 
 Mandelbrot: ComplexNumber.o Mandelbrot.o MandelFrame.o
 	$(CC) -o MandelFrame ComplexNumber.o Mandelbrot.o MandelFrame.o -lm
