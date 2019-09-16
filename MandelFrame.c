@@ -71,6 +71,7 @@ void printUsage(char* argv[])
 		}
 		fputc('\n', outputfile);
 	}
+	fclose(outputfile);
 	free(ar);
 	return 0;
 }
