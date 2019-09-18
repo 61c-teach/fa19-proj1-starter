@@ -25,6 +25,7 @@ void printUsage(char* argv[])
 {
 	test_complex_number();
 
+	//STEP 1: Convert command line inputs to local variables, and ensure that inputs are valid.
 	// Check number of args
 	if (argc != 8) {
 		printf("%s: Wrong number of arguments, expecting 7\n", argv[0]);
@@ -47,8 +48,9 @@ void printUsage(char* argv[])
 		return 1;
 	}
 	u_int64_t size = 2 * resolution + 1;
+	//END STEP 1
 
-
+	//STEP 2: Run Mandelbrot on the correct arguments.
 	u_int64_t *ar;
 	ar = (u_int64_t *)malloc(size * size * sizeof(u_int64_t));
 	if (ar == NULL) {
@@ -61,6 +63,9 @@ void printUsage(char* argv[])
 	Mandelbrot(threshold, max_iterations, center, scale, resolution, ar);
 
 	printf("Calculation complete, outputting to file %s\n", argv[7]);
+	//END STEP 2
+
+	//STEP 3: Output the results of Mandelbrot to .txt files.
 	FILE* outputfile = fopen(argv[7], "w+");
 	u_int64_t iterations;
 	for (int row = 0; row < size; row++) {
@@ -70,8 +75,13 @@ void printUsage(char* argv[])
 			fprintf(outputfile, "%lu ", iterations);
 		}
 		fputc('\n', outputfile);
-	}
+	}	
+	
 	fclose(outputfile);
+
+	//END STEP 3
+
+	//STEP 4: Free all allocated memory
 	free(ar);
 	return 0;
 }
