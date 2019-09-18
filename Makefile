@@ -2,10 +2,10 @@ CC = gcc
 CFLAGS = -lm -g
 
 Mandelbrot: ComplexNumber.o Mandelbrot.o MandelFrame.o
-	$(CC) -o MandelFrame ComplexNumber.o Mandelbrot.o MandelFrame.o -lm
+	$(CC) -o MandelFrame ComplexNumber.o Mandelbrot.o MandelFrame.o -lm -g 
 
 MandelMovie: ComplexNumber.o Mandelbrot.o MandelMovie.o
-	$(CC) -o $@ ComplexNumber.o Mandelbrot.o MandelMovie.o
+	$(CC) -o $@ ComplexNumber.o Mandelbrot.o MandelMovie.o -g 
 
 testA:	Mandelbrot
 	./MandelFrame 2 1536 -0.7746806106269039 -0.1374168856037867 1e-5 100 student_output/student_output.txt
