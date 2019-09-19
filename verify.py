@@ -57,7 +57,11 @@ def ppmequal(file1, file2):
 if(sys.argv[1][-4:]==".txt"):
     a,b = checkequal(sys.argv[1], sys.argv[2])
     print("You have " + str(a) +" inaccurate pixels" +
-    ", which is a " + str((1-(a/b))*100)+"% accuracy.")
+    ", which is a " + str((1-(a/b))*100)+"\% accuracy.")
+elif(sys.argv[1][-4:] == ".ppm"):
+    a,b = ppmequal(sys.argv[1], sys.argv[2])
+    print("You have " + str(a) +" inaccurate pixels" +
+    ", which is a " + str((1-(a/b))*100)+"\% accuracy.")
 else:
     k = len(os.listdir(sys.argv[1]))
     a,b = 0,0
@@ -70,4 +74,4 @@ else:
         c,d = ppmequal(file1, file2)
         a+=c
         b+=d
-    print("You have " + str(a) +" inaccurate pixels" + ", which is a " + str((1-(a/b))*100)+"% accuracy.")
+    print("You have " + str(a) +" inaccurate pixels" + ", which is a " + str((1-(a/b))*100)+"\% accuracy.")
