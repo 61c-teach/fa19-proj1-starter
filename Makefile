@@ -33,7 +33,7 @@ testB1Big: colorPalette
 
 
 memcheckB1: colorPalette
-	valgrind --tool=memcheck --leak-check=full --dsymutil=yes --track-origins=yes ./colorPalette defaultcolormap student_output 100 1
+	valgrind --tool=memcheck --leak-check=full --dsymutil=yes --track-origins=yes ./colorPalette defaultcolormap.txt student_output 100 1
 
 testB2:  MandelMovie
 	./MandelMovie 2 1536 -0.561397233777 -0.643059076016 2 1e-7 5 100 student_output/partBSmall defaultcolormap.txt
