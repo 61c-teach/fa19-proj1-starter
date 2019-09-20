@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
 
 /*
 This function returns the number of iterations that cause the initial point to exceed the threshold.

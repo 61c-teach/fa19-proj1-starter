@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include "ComplexNumber.h"
 #include "Mandelbrot.h"
+#include <sys/types.h>
 
 void printUsage(char* argv[])
 {
