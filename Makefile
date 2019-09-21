@@ -2,10 +2,10 @@ CC = gcc
 CFLAGS = -lm -g
 
 Mandelbrot: ComplexNumber.o Mandelbrot.o MandelFrame.o
-	$(CC) -o MandelFrame ComplexNumber.o Mandelbrot.o MandelFrame.o -lm -g
+	$(CC) -o MandelFrame ComplexNumber.o Mandelbrot.o MandelFrame.o $(CFLAGS)
 
 MandelMovie: ComplexNumber.o Mandelbrot.o MandelMovie.o ColorMapInput.o
-	$(CC) -o $@ ComplexNumber.o Mandelbrot.o MandelMovie.o ColorMapInput.o -g
+	$(CC) -o $@ ComplexNumber.o Mandelbrot.o MandelMovie.o ColorMapInput.o $(CFLAGS)
 
 colorPalette: ColorMapInput.o colorPalette.o
 	$(CC) -o $@ ColorMapInput.o colorPalette.o $(CFLAGS)
@@ -43,7 +43,7 @@ memcheckB2: MandelMovie
 	valgrind --tool=memcheck --leak-check=full --dsymutil=yes --track-origins=yes ./MandelMovie 2 1536 -0.561397233777 -0.643059076016 2 1e-7 5 100 student_output/partB defaultcolormap.txt
 
 testB2Small:  MandelMovie
-	./MandelMovie 2 1536 5 3 8 2 3 2 student_output/partB defaultcolormap.txt
+	./MandelMovie 2 1536 5 3 8 2 3 2 student_output/partBSmall defaultcolormap.txt
 	python verify.py testing/testBSmall student_output/partBSmall
 
 memcheckB2Small: MandelMovie
