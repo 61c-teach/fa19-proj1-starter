@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
 		printf("Error in making P6colorpalette");
 		return 1;
 	}
-	printf("Success, stored in %s, %s", P3end, P6end);
+	printf("P3colorpalette and P6colorpalette ran without error, output should be stored in %s%s, %s%s", argv[2], P3end, arvg[2], P6end);
 	return 0;
 }
 
