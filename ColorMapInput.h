@@ -3,7 +3,7 @@
 ** Skeleton by Justin Yokota
 **********************/
 
-
+#include <stdint.h>
 
 
 /**************
