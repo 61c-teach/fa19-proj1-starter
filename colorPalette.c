@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 	int height = atoi(argv[4]);
 	char* P3end = "/colorpaletteP3.ppm";
 	char* P6end = "/colorpaletteP6.ppm";
-	char buffer[strlen(argv[2]) + strlen(P3end)];
+	char buffer[strlen(argv[2]) + strlen(P3end)+1];
 	sprintf(buffer, "%s%s", argv[2], P3end);
 	int failed = P3colorpalette(argv[1], width, height, buffer);
 	if (failed)
